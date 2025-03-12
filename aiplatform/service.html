@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services</title>
+    <link rel="icon" type="image/png" href="Blue and White Modern Company Logo-modified.png">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Exo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+        }
+        .services-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px;
+        }
+        .service-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .service-box:hover {
+            transform: scale(1.1);
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our AI-Powered Services</h1>
+    <div class="services-container">
+        <div class="service-box" onclick="location.href='mentalai.html'">
+            <div class="service-icon">🧠</div>
+            <h2>Mental Health AI</h2>
+            <p>Get emotional support and guidance from AI-powered mental health tools.</p>
+        </div>
+        <div class="service-box" onclick="location.href='fitnessai.html'">
+            <div class="service-icon">💪</div>
+            <h2>Fitness & Diet AI</h2>
+            <p>Personalized fitness and diet plans powered by AI to achieve your goals.</p>
+        </div>
+        <div class="service-box" onclick="location.href='studyai.html'">
+            <div class="service-icon">📚</div>
+            <h2>Study & Exam AI</h2>
+            <p>Smart AI that helps with study plans, doubt solving, and exam preparation.</p>
+        </div>
+    </div>
+</body>
+</html>

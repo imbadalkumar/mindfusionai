@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="icon" type="image/png" href="Blue and White Modern Company Logo-modified.png">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Exo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        .faq-container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            font-size: 18px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>1. What is AI Mental Health Support?</h3>
+            <p class="faq-answer">AI Mental Health Support provides 24/7 emotional guidance and mindfulness techniques to help users manage stress.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>2. How accurate is the AI Fitness & Diet Assistant?</h3>
+            <p class="faq-answer">Our AI uses advanced algorithms to tailor fitness plans and diet recommendations based on user data.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>3. Can the AI Study Helper assist with all subjects?</h3>
+            <p class="faq-answer">Yes! Our AI covers various subjects, providing adaptive study plans and real-time support.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>4. Is my data safe with AI tools?</h3>
+            <p class="faq-answer">Yes, we use encrypted servers to ensure complete privacy and data security.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>5. Can I personalize my AI recommendations?</h3>
+            <p class="faq-answer">Absolutely! Our AI adapts based on your feedback and activity to provide personalized suggestions.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>6. How does AI Mental Health Support work?</h3>
+            <p class="faq-answer">Simply chat with our AI, and it will provide techniques, exercises, and support to help with mental well-being.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>7. Is AI-powered study assistance free?</h3>
+            <p class="faq-answer">Yes! Our basic AI study tools are free to use, with premium options for advanced features.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>8. Can I use AI tools on mobile?</h3>
+            <p class="faq-answer">Yes, all our AI tools are optimized for mobile devices and desktops.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>9. How often is the AI updated?</h3>
+            <p class="faq-answer">Our AI models are updated regularly to improve accuracy and efficiency.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>10. What if I need human support?</h3>
+            <p class="faq-answer">You can contact our support team anytime through our Help Center.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>11. Do AI tools require login?</h3>
+            <p class="faq-answer">Yes, logging in helps us provide personalized recommendations and save your progress.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>12. How do I reset my AI recommendations?</h3>
+            <p class="faq-answer">You can reset AI preferences in your profile settings.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>13. Are AI diet recommendations suitable for everyone?</h3>
+            <p class="faq-answer">Our AI considers dietary preferences and medical conditions to ensure suitability.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>14. How do I provide feedback on AI responses?</h3>
+            <p class="faq-answer">You can rate responses or contact us for feedback to improve AI performance.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>15. Can AI tools be used for professional exams?</h3>
+            <p class="faq-answer">Yes, our AI adapts to different learning levels, including professional and competitive exams.</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleFAQ(element) {
+            let answer = element.querySelector(".faq-answer");
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

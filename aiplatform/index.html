@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Fusion AI</title>
+    <link rel="icon" type="image/png" href="Blue and White Modern Company Logo-modified.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <meta name="google-site-verification" content="82WD4gv2_HpaQvvTnyaZt2egTF6kFfnM0QWiS53QPLc" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Exo', sans-serif;
+
+
+    }
+    body { background: linear-gradient(270deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff); background-size: 400% 400%; animation: bgAnimation 10s ease infinite; } @keyframes bgAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 20px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+        }
+        .brand { font-size: 24px; font-weight: bold; color: #4285F4; }
+        .nav-links a { margin: 0 10px; text-decoration: none; color: #333; }
+      
+        
+        
+
+
+
+        .footer {
+            background: #000;
+            padding: 50px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-top: 2px solid #0ff;
+            box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+        }
+
+        .company-info {
+            max-width: 300px;
+        }
+
+        .company-info h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0ff;
+        }
+
+        .company-info p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .footer-column h3 {
+            color: #0ff;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #aaa;
+            transition: 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; }
+            to { text-shadow: 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan; }
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #000;
+            background: cyan;
+            border: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-shadow: 0 0 10px black;
+        }
+
+        .btn:hover {
+            background: #00ffee;
+            box-shadow: 0 0 15px cyan;
+            transform: scale(1.1);
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: cyan;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); opacity: 0; }
+            to { transform: translateY(-10vh); opacity: 1; }
+        }
+
+        /* Random Particle Placement */
+        .particle:nth-child(1) { left: 10%; animation-duration: 6s; }
+        .particle:nth-child(2) { left: 25%; animation-duration: 8s; }
+        .particle:nth-child(3) { left: 40%; animation-duration: 10s; }
+        .particle:nth-child(4) { left: 55%; animation-duration: 7s; }
+        .particle:nth-child(5) { left: 70%; animation-duration: 9s; }
+        .particle:nth-child(6) { left: 85%; animation-duration: 6s; }
+        .particle:nth-child(7) { left: 95%; animation-duration: 11s; }
+
+      
+  /* Responsive */
+  @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 16px; }
+            .btn { padding: 10px 25px; font-size: 16px; }
+        }
+
+
+
+
+        .blog-section {
+            width: 90%;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .blog-card {
+            width: 30%;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 15px;
+        }
+
+        .blog-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .blog-heading {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .blog-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .blog-card {
+                width: 100%;
+            }
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .blogs { flex-direction: column; align-items: center; }
+            .blog { width: 90%; }
+        }
+
+
+
+
+
+
+
+
+
+        .ai-section {
+            width: 100%;
+            padding: 50px 10%;
+            background: linear-gradient(270deg, #000428, #004e92);
+            background-size: 400% 400%;
+            animation: bgAnimation 10s ease infinite;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .ai-section h2 {
+            font-size: 40px;
+            text-transform: uppercase;
+            color: cyan;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+            margin-bottom: 30px;
+        }
+
+        .ai-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .ai-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid cyan;
+            border-radius: 10px;
+            box-shadow: 0 0 15px cyan;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .ai-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px cyan;
+        }
+
+        .ai-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: cyan;
+        }
+
+        .ai-box p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .ai-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: cyan;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .ai-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<meta name="google-site-verification" content="82WD4gv2_HpaQvvTnyaZt2egTF6kFfnM0QWiS53QPLc" />
+<body>
+    <nav class="navbar">
+        <div class="brand">Mind Fusion AI</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <h1>Welcome to the Future</h1>
+        <p>Experience cutting-edge innovation like never before.</p>
+        <button class="btn">Explore Now</button>
+    </div>
+
+
+    <style>
+        
+            .hero {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(270deg, #000428, #004e92);
+            background-size: 400% 400%;
+            animation: bgAnimation 10s ease infinite;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: cyan;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; }
+            to { text-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 50px cyan; }
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            opacity: 0.8;
+            color: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #000;
+            background: cyan;
+            border: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-shadow: 0 0 10px black;
+        }
+
+        .btn:hover {
+            background: #00ffee;
+            box-shadow: 0 0 15px cyan;
+            transform: scale(1.1);
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: cyan;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); opacity: 0; }
+            to { transform: translateY(-10vh); opacity: 1; }
+        }
+
+        /* Random Particle Placement */
+        .particle:nth-child(1) { left: 10%; animation-duration: 6s; }
+        .particle:nth-child(2) { left: 25%; animation-duration: 8s; }
+        .particle:nth-child(3) { left: 40%; animation-duration: 10s; }
+        .particle:nth-child(4) { left: 55%; animation-duration: 7s; }
+        .particle:nth-child(5) { left: 70%; animation-duration: 9s; }
+        .particle:nth-child(6) { left: 85%; animation-duration: 6s; }
+        .particle:nth-child(7) { left: 95%; animation-duration: 11s; }
+
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 16px; }
+            .btn { padding: 10px 25px; font-size: 16px; }
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="ai-section">
+    <h2>Explore AI Solutions</h2>
+    <div class="ai-container">
+        <!-- Mental Health AI -->
+        <div class="ai-box">
+            <div class="ai-icon">🧠</div>
+            <h3>Mental Health AI</h3>
+            <p>Get support for anxiety, stress, and mindfulness through AI-powered assistance.</p>
+            <a href="mentalai.html"><button><b>Explore</b></button></a>
+        </div>
+        
+        <!-- Fitness & Diet AI -->
+        <div class="ai-box">
+            <div class="ai-icon">🏋️</div>
+            <h3>Fitness & Diet AI</h3>
+            <p>Personalized diet plans and workout routines tailored to your health goals.</p>
+            <a href="fitnessai.html"><button><b>Explore</b></button></a>
+        </div>
+        
+        <!-- Study & Exams AI -->
+        <div class="ai-box">
+            <div class="ai-icon">📚</div>
+            <h3>Study & Exams AI</h3>
+            <p>Smart learning tools, exam strategies, and AI-driven study plans.</p>
+            <a href="studyai.html"><button><b>Explore</b></button></a>
+        </div>
+    </div>
+</section>
+
+    <div class="blog-section">
+        <div class="blog-card">
+            <img src="Teal Illustration Digital Business Blog Banner.png" alt="Blog Image" class="blog-img">
+            <div class="blog-content">
+                <a href="article1.html"><div class="blog-title">How AI Can Improve Your Mental Health: A Complete Guide</div></a>
+                <div class="blog-heading">Author: BK</div>
+                <div class="blog-footer">
+                    <span>Mental Health</span>
+                    <span>10 min read</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="Teal Illustration Digital Business Blog Banner (1).png" alt="Blog Image" class="blog-img">
+            <div class="blog-content">
+                <a href="article2.html"><div class="blog-title">How AI Enhances Fitness & Diet</div></a>
+                <div class="blog-heading">Author: BK</div>
+                <div class="blog-footer">
+                    <span> Fitness and diet</span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="Teal Illustration Digital Business Blog Banner (2).png" alt="Blog Image" class="blog-img">
+            <div class="blog-content">
+               <a href="article3.html"> <div class="blog-title">How Our AI Enhances Your Fitness & Diet</div></a>
+                <div class="blog-heading">Author: BK</div>
+                <div class="blog-footer">
+                    <span>Fitness and Diet</span>
+                    <span>15 min read</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="Teal Illustration Digital Business Blog Banner (3).png" alt="Blog Image" class="blog-img">
+            <div class="blog-content">
+            <a href="article4.html"><div class="blog-title">How Our AI Supports Your Mental Health</div></a>
+                <div class="blog-heading">Author: BK</div>
+                <div class="blog-footer">
+                    <span>Mental Health</span>
+                    <span>10 min read</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+    
+        <img src="Teal Illustration Digital Business Blog Banner (2).png" alt="Blog Image" class="blog-img">
+        <div class="blog-content">
+            <a href="article5.html"><div class="blog-title">How Our AI Supports Your Fitness & Diet Goals</div></a>
+            <div class="blog-heading">Author: BK</div>
+            <div class="blog-footer">
+                <span>Fitness and Diet</span>
+                <span>10 min read</span>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+          
+            <img src="Teal Illustration Digital Business Blog Banner (5).png" alt="Blog Image" class="blog-img">
+            <div class="blog-content">
+                <a href="article5.html"><div class="blog-title">How Our AI Supports Your Studies & Exam Preparation</div></a>
+                <div class="blog-heading"> Author: BK</div>
+
+                <div class="blog-footer">
+                    <span>Study and Exam</span>
+                    <span>10 min read</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <!-- Left Side: Company Info -->
+        <div class="company-info">
+            <div class="footer-logo">
+                <img src="Blue and White Modern Company Logo-modified.png" alt="Logo">
+                <h2>Mind Fusion AI.</h2>
+            </div>
+            <p>Innovating the future with cutting-edge technology and futuristic ai solutions.</p>
+        </div>
+
+        <!-- Right Side: Footer Links -->
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="helpcenter.html">Help Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faqs.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="termsofservice.html">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </footer>
+</body>
+</html>
